@@ -1,0 +1,25 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+     /* Brute Force withoute using bits manipulation
+     //Time complexity is O(n) & space => O(n)
+      Set<Integer> st = new HashSet<>();
+      for(int i: nums)
+        {
+            if(st.contains(i))
+                 st.remove(i);
+            else st.add(i);
+        }
+         Integer[] ele = st.toArray(new Integer[st.size()]);
+        int res = ele[0];
+        return res;*/
+
+        //Using bit manipulation
+        //Time complexity is O(n) and space is O(n)
+        int res =0;
+        for(int i=0; i<nums.length; i++){
+            
+            res ^= nums[i];
+        }
+        return res;
+    }
+}
